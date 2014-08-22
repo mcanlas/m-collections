@@ -16,4 +16,12 @@ class ListSpec extends SeqSpec {
       } must throwA[UnsupportedOperationException]
     }
   }
+
+  "A non-empty list" should {
+    "have a head" in {
+      val list = new MList('foo, MNil)
+
+      list.head === 'foo
+    }
+  }
 }
