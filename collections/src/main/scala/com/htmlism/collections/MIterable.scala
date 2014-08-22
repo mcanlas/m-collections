@@ -1,3 +1,3 @@
 package com.htmlism.collections
 
-trait MIterable extends MTraversable
+trait MIterable[A] extends MTraversable[A]

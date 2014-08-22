@@ -1,3 +1,3 @@
 package com.htmlism.collections
 
-trait MMap extends MIterable
+trait MMap[A, B] extends MIterable[(A, B)]

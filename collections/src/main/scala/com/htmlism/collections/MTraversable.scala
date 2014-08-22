@@ -1,3 +1,3 @@
 package com.htmlism.collections
 
-trait MTraversable
+trait MTraversable[A]

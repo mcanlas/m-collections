@@ -1,3 +1,3 @@
 package com.htmlism.collections
 
-trait MSeq extends MIterable
+trait MSeq[A] extends MIterable[A]

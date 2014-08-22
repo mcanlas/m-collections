@@ -1,3 +1,3 @@
 package com.htmlism.collections
 
-trait MSet extends MIterable
+trait MSet[A] extends MIterable[A]

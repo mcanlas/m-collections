@@ -1,3 +1,3 @@
 package com.htmlism.collections
 
-trait MList extends MLinearSeq
+trait MList[A] extends MLinearSeq[A]

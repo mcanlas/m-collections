@@ -1,3 +1,3 @@
 package com.htmlism.collections
 
-trait MIndexedSeq extends MSeq
+trait MIndexedSeq[A] extends MSeq[A]
