@@ -1,7 +1,7 @@
 package com.htmlism.collections
 
 trait SeqSpec extends IterableSpec {
-  def sequence: MSeq[_]
+  def sequence: MSeq[Int]
 
   "A sequence" should {
     "support access by index" in {
