@@ -4,14 +4,14 @@ import org.specs2.mutable.Specification
 
 class EmptyListSpec extends Specification {
   "An empty list" should {
-    "not support head" in {
+    "not have a head" in {
       {
         MNil.head
         ()
       } must throwA[NoSuchElementException]
     }
 
-    "not support tail" in {
+    "not have a tail" in {
       {
         MNil.tail
         ()
