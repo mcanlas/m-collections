@@ -1,6 +1,6 @@
 package com.htmlism.collections
 
-class ListSpec extends SeqSpec {
+class NonEmptyListSpec extends SeqSpec {
   def sequence =
     new MList(1,
       new MList(2,
