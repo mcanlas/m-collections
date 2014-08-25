@@ -1,6 +1,7 @@
 package com.htmlism.collections
 
 trait SeqSpec extends IterableSpec {
+  def iterable = sequence
   def sequence: MSeq[Int]
 
   "A sequence" should {
