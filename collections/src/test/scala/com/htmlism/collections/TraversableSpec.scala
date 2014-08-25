@@ -1,3 +1,5 @@
 package com.htmlism.collections
 
-trait TraversableSpec
+import org.specs2.mutable.Specification
+
+trait TraversableSpec extends Specification

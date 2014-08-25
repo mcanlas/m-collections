@@ -1,3 +1,3 @@
 package com.htmlism.collections
 
-trait IterableSpec
+trait IterableSpec extends TraversableSpec
