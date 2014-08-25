@@ -17,5 +17,13 @@ class EmptyListSpec extends Specification {
         ()
       } must throwA[UnsupportedOperationException]
     }
+
+    "do nothing after traversal" in {
+      var i = 0
+
+      MNil.foreach(_ => i += 1)
+
+      i === 0
+    }
   }
 }

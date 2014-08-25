@@ -1,3 +1,5 @@
 package com.htmlism.collections
 
-trait MTraversable[+A]
+trait MTraversable[+A] {
+  def foreach[B](f: A => B): Unit
+}
