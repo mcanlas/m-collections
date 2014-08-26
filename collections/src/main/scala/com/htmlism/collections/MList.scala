@@ -1,9 +1,20 @@
 package com.htmlism.collections
 
 class MList[+A](val head: A, val tail: MListLike[A]) extends MListLike[A] {
-  def foreach[B](f: A => B) = {
-    f(head)
+  private val self = this
 
-    tail.foreach(f)
+  def iterator = new Iterator[A] {
+    var remainder = self : MListLike[A]
+
+    def hasNext = remainder match {
+      case _: MList[_] => true
+      case    MNil     => false
+    }
+
+    def next() = {
+      val result = remainder.head
+      remainder = remainder.tail
+      result
+    }
   }
 }
