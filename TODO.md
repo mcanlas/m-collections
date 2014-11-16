@@ -1,5 +1,6 @@
 # Next actions
 
+* don't use stock iterator
 * Implement factory methods
   * With apply* constructor
   * With empty instance
