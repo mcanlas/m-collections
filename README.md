@@ -3,6 +3,11 @@ m-collections
 
 A toy reimplementation of the Scala collections library
 
+Motivation
+----------
+
+I wanted to better understand how the existing collections library works by reimplementing a subset of it.
+
 What does the 'm' stand for?
 ----------------------------
 
