@@ -11,6 +11,4 @@ class MVector[A](values: Array[A]) extends MIndexedSeq[A] {
       values(i - 1)
     }
   }
-
-  def apply(i: Int) = values(i)
 }
