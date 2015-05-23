@@ -1,6 +1,6 @@
 package com.htmlism.collections
 
-trait MList[+A] extends MLinearSeq[A] {
+trait MList[+A] extends LinearSeq[A] {
   def head: A
   def tail: MList[A]
 
