@@ -1,14 +1,22 @@
 package com.htmlism.collections
 
-class MVector[A](values: Array[A]) extends MIndexedSeq[A] {
+import com.htmlism.collections.builders.VectorBuilder
+
+object MVector extends CollectionFactory[MVector] {
+  def builder[A] = new VectorBuilder[A]
+}
+
+class MVector[A](values: Array[AnyRef]) extends MIndexedSeq[A] {
   def iterator = new Iterator[A] { // TODO use custom iterator trait
     var i = 0
 
     def hasNext = i < values.length
 
     def next() = {
+      val v = values(i).asInstanceOf[A]
       i += 1
-      values(i - 1)
+
+      v
     }
   }
 }
