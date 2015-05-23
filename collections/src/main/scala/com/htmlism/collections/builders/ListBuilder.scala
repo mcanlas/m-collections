@@ -16,3 +16,11 @@ class ListBuilder[A] extends Builder[A, MList[A]] {
     rev
   }
 }
+
+class ReverseListBuilder[A] extends Builder[A, MList[A]] {
+  private var acc: MList[A] = MNil
+
+  def +=(element: A) = acc ::= element
+
+  def result = acc
+}
