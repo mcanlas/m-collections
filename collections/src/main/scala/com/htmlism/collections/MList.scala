@@ -11,4 +11,6 @@ trait MList[+A] extends LinearSeq[A] {
       head
     else
       tail(i - 1)
+
+  def ::[B >: A](x: B): MList[B] = new NonEmptyList(x, this)
 }
