@@ -1,6 +1,6 @@
 package com.htmlism.collections
 
-object MList
+object MList extends CollectionFactory[MList]
 
 trait MList[+A] extends LinearSeq[A] {
   def head: A

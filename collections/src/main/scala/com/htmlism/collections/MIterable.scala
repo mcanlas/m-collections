@@ -1,6 +1,6 @@
 package com.htmlism.collections
 
-object MIterable
+object MIterable extends CollectionFactory[MIterable]
 
 trait MIterable[+A] extends MTraversable[A] {
   def iterator: Iterator[A]
