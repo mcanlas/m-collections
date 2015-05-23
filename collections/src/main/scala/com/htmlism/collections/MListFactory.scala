@@ -1,7 +1,7 @@
 package com.htmlism.collections
 
-trait MListFactory extends CollectionFactory[MNonEmptyList] {
-  def apply[B](elements: B*): MNonEmptyList[B] = ???
+trait MListFactory extends CollectionFactory[NonEmptyList] {
+  def apply[B](elements: B*): NonEmptyList[B] = ???
 
 //  def empty: MNonEmptyList = ???
 }
