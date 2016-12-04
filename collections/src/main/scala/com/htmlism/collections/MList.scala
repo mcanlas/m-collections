@@ -31,7 +31,7 @@ class NonEmptyList[+A](val head: A, val tail: MList[A]) extends MList[A] {
       case    MNil     => false
     }
 
-    def next() = {
+    def next(): A = {
       val result = remainder.head
       remainder = remainder.tail
       result
