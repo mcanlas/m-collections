@@ -7,7 +7,7 @@ class ListBuilder[A] extends Builder[A, MList[A]] {
 
   def +=(element: A): Unit = acc ::= element
 
-  def result = {
+  def result: MList[A] = {
     var rev: MList[A] = MNil
 
     for (x <- acc)
@@ -22,5 +22,5 @@ class ReverseListBuilder[A] extends Builder[A, MList[A]] {
 
   def +=(element: A): Unit = acc ::= element
 
-  def result = acc
+  def result: MList[A] = acc
 }
