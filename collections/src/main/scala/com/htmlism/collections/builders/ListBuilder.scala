@@ -5,7 +5,7 @@ import com.htmlism.collections.{ MList, MNil }
 class ListBuilder[A] extends Builder[A, MList[A]] {
   private var acc: MList[A] = MNil
 
-  def +=(element: A) = acc ::= element
+  def +=(element: A): Unit = acc ::= element
 
   def result = {
     var rev: MList[A] = MNil
@@ -20,7 +20,7 @@ class ListBuilder[A] extends Builder[A, MList[A]] {
 class ReverseListBuilder[A] extends Builder[A, MList[A]] {
   private var acc: MList[A] = MNil
 
-  def +=(element: A) = acc ::= element
+  def +=(element: A): Unit = acc ::= element
 
   def result = acc
 }

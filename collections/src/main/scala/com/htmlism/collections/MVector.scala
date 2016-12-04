@@ -10,9 +10,9 @@ class MVector[A](values: Array[AnyRef]) extends MIndexedSeq[A] {
   def iterator = new Iterator[A] { // TODO use custom iterator trait
     var i = 0
 
-    def hasNext = i < values.length
+    def hasNext: Boolean = i < values.length
 
-    def next() = {
+    def next(): A = {
       val v = values(i).asInstanceOf[A]
       i += 1
 

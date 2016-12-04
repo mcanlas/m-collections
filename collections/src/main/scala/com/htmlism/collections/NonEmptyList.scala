@@ -6,12 +6,12 @@ class NonEmptyList[+A](val head: A, val tail: MList[A]) extends MList[A] {
   def iterator = new Iterator[A] { // TODO use custom iterator trait
     var remainder = self : MList[A]
 
-    def hasNext = remainder match {
+    def hasNext: Boolean = remainder match {
       case _: NonEmptyList[_] => true
       case    MNil     => false
     }
 
-    def next() = {
+    def next(): A = {
       val result = remainder.head
       remainder = remainder.tail
       result

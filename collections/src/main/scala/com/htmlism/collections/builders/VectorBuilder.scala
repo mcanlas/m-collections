@@ -6,12 +6,12 @@ class VectorBuilder[A] extends Builder[A, MVector[A]] {
   private val b = new ReverseListBuilder[A]
   private var i = 0
 
-  def +=(element: A) = {
+  def +=(element: A): Unit = {
     b += element
     i += 1
   }
 
-  def result = {
+  def result: MVector[A] = {
     // generically typed arrays are hard?
     val arr = new Array[AnyRef](i)
     i -= 1
