@@ -3,7 +3,7 @@ package com.htmlism.collections
 import com.htmlism.collections.builders.ListBuilder
 
 object MList extends CollectionFactory[MList] {
-  def builder[A] = new ListBuilder[A]
+  def builder[A]: ListBuilder[A] = new ListBuilder[A]
 }
 
 trait MList[+A] extends LinearSeq[A] {
