@@ -20,7 +20,7 @@ case object MNil extends MList[Nothing] {
   def tail = throw new UnsupportedOperationException("an empty list does not have a tail")
 }
 
-case class NonEmptyList[+A](head: A, tail: MList[A]) extends MList[A]
+final case class NonEmptyList[+A](head: A, tail: MList[A]) extends MList[A]
 
 class ListIterator[A](list: MList[A]) extends Iterator[A] {
   private var cur = list
