@@ -7,18 +7,12 @@ object MList extends CollectionFactory[MList] {
 }
 
 sealed trait MList[+A] extends LinearSeq[A] {
-  def head: A
-  def tail: MList[A]
-
   def iterator: Iterator[A] = new ListIterator(this)
 
   def ::[B >: A](x: B): MList[B] = NonEmptyList(x, this)
 }
 
-case object MNil extends MList[Nothing] {
-  def head = throw new NoSuchElementException("an empty list does not have a head")
-  def tail = throw new UnsupportedOperationException("an empty list does not have a tail")
-}
+case object MNil extends MList[Nothing]
 
 final case class NonEmptyList[+A](head: A, tail: MList[A]) extends MList[A]
 
