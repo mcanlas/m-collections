@@ -36,9 +36,8 @@ class ListIterator[A](list: MList[A]) extends Iterator[A] {
       case MNil =>
         throw new IllegalStateException("cannot retrieve an element from an exhausted iterator")
 
-      case xs: MList[A] =>
-        val res = xs.head
-        cur = cur.tail
-        res
+      case NonEmptyList(head, tail) =>
+        cur = tail
+        head
     }
 }
