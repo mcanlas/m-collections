@@ -14,16 +14,11 @@ class VectorBuilder[A] extends Builder[A, MVector[A]] {
   def result: MVector[A] = {
     // generically typed arrays are hard?
     val arr = new Array[AnyRef](i)
-    i -= 1
+    i = i - 1
 
-    var list = b.result
-
-    while (i > -1) {
-      // must relax List[A] into AnyRef
-      arr(i) = list.head.asInstanceOf[AnyRef]
-
-      list = list.tail
-      i -= 1
+    for (x <- b.result) {
+      arr(i) = x.asInstanceOf[AnyRef]
+      i = i - 1
     }
 
     new MVector[A](arr)
