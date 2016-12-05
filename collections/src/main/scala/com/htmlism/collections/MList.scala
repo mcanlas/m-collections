@@ -10,31 +10,35 @@ sealed trait MList[+A] extends LinearSeq[A] {
   def head: A
   def tail: MList[A]
 
+  def iterator: Iterator[A] = new ListIterator(this)
+
   def ::[B >: A](x: B): MList[B] = NonEmptyList(x, this)
 }
 
 case object MNil extends MList[Nothing] {
-  def iterator: Iterator[Nothing] = Iterator.empty // TODO use custom iterator trait
-
   def head = throw new NoSuchElementException("an empty list does not have a head")
   def tail = throw new UnsupportedOperationException("an empty list does not have a tail")
 }
 
-case class NonEmptyList[+A](head: A, tail: MList[A]) extends MList[A] {
-  private val self = this
+case class NonEmptyList[+A](head: A, tail: MList[A]) extends MList[A]
 
-  def iterator: Iterator[A] = new Iterator[A] { // TODO use custom iterator trait
-    var remainder = self : MList[A]
+class ListIterator[A](list: MList[A]) extends Iterator[A] {
+  private var cur = list
 
-    def hasNext: Boolean = remainder match {
-      case _: NonEmptyList[_] => true
-      case    MNil     => false
+  def hasNext: Boolean =
+    cur match {
+      case MNil => false
+      case _ => true
     }
 
-    def next(): A = {
-      val result = remainder.head
-      remainder = remainder.tail
-      result
+  def next(): A =
+    cur match {
+      case MNil =>
+        throw new IllegalStateException("cannot retrieve an element from an exhausted iterator")
+
+      case xs: MList[A] =>
+        val res = xs.head
+        cur = cur.tail
+        res
     }
-  }
 }
