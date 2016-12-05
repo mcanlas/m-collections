@@ -10,17 +10,17 @@ sealed trait MList[+A] extends LinearSeq[A] {
   def head: A
   def tail: MList[A]
 
-  def ::[B >: A](x: B): MList[B] = new NonEmptyList(x, this)
+  def ::[B >: A](x: B): MList[B] = NonEmptyList(x, this)
 }
 
-object MNil extends MList[Nothing] {
+case object MNil extends MList[Nothing] {
   def iterator: Iterator[Nothing] = Iterator.empty // TODO use custom iterator trait
 
   def head = throw new NoSuchElementException("an empty list does not have a head")
   def tail = throw new UnsupportedOperationException("an empty list does not have a tail")
 }
 
-class NonEmptyList[+A](val head: A, val tail: MList[A]) extends MList[A] {
+case class NonEmptyList[+A](head: A, tail: MList[A]) extends MList[A] {
   private val self = this
 
   def iterator: Iterator[A] = new Iterator[A] { // TODO use custom iterator trait
