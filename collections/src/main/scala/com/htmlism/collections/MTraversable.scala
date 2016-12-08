@@ -1,9 +1,9 @@
 package com.htmlism.collections
 
-import com.htmlism.collections.builders.ListBuilder
+import com.htmlism.collections.builders._
 
 object MTraversable extends CollectionFactory[MTraversable] {
-  def builder[A] = new ListBuilder[A]
+  def builder[A]: Builder[A, MTraversable[A]] = new ListBuilder[A]
 }
 
 trait MTraversable[+A] extends TraversableOperations {

@@ -1,9 +1,9 @@
 package com.htmlism.collections
 
-import com.htmlism.collections.builders.ListBuilder
+import com.htmlism.collections.builders._
 
 object LinearSeq extends CollectionFactory[LinearSeq] {
-  def builder[A] = new ListBuilder[A]
+  def builder[A]: Builder[A, LinearSeq[A]] = new ListBuilder[A]
 }
 
 trait LinearSeq[+A] extends MSeq[A]

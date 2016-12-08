@@ -1,9 +1,9 @@
 package com.htmlism.collections
 
-import com.htmlism.collections.builders.ListBuilder
+import com.htmlism.collections.builders._
 
 object MIterable extends CollectionFactory[MIterable] {
-  def builder[A] = new ListBuilder[A]
+  def builder[A]: Builder[A, MIterable[A]] = new ListBuilder[A]
 }
 
 trait MIterable[+A] extends MTraversable[A] {

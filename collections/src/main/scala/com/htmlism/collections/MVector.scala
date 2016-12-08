@@ -1,9 +1,9 @@
 package com.htmlism.collections
 
-import com.htmlism.collections.builders.VectorBuilder
+import com.htmlism.collections.builders._
 
 object MVector extends CollectionFactory[MVector] {
-  def builder[A] = new VectorBuilder[A]
+  def builder[A]: Builder[A, MVector[A]] = new VectorBuilder[A]
 }
 
 class MVector[A](values: Array[AnyRef]) extends MIndexedSeq[A] {
