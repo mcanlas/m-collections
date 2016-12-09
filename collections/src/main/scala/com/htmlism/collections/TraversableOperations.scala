@@ -1,7 +1,16 @@
 package com.htmlism.collections
 
-trait TraversableOperations {
-  self: MTraversable[_] =>
+trait TraversableOperations[+A] {
+  self: MTraversable[A] =>
+
+  def foldLeft[B](z: B)(f: (B, A) => B): B = {
+    var res = z
+
+    for (x <- this)
+      res = f(res, x)
+
+    res
+  }
 
   override def toString = {
     val sb = new StringBuilder(self.getClass.getSimpleName + '(')
