@@ -1,6 +1,5 @@
-package com.htmlism.collections.builders
-
-import com.htmlism.collections.{ MList, MNil }
+package com.htmlism.collections
+package builders
 
 class ListBuilder[A] extends Builder[A, MList[A]] {
   private var acc: MList[A] = MNil
