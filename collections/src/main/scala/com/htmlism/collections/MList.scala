@@ -3,6 +3,9 @@ package com.htmlism.collections
 import com.htmlism.collections.builders.ListBuilder
 
 object MList extends CollectionFactory[MList] {
+  def empty[A]: MList[A] =
+    MNil
+
   def builder[A]: ListBuilder[A] = new ListBuilder[A]
 }
 
