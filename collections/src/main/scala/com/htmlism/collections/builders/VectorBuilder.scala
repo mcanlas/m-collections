@@ -2,7 +2,7 @@ package com.htmlism.collections
 package builders
 
 class VectorBuilder[A] extends Builder[A, MVector[A]] {
-  private val b = new ReverseListBuilder[A]
+  private val b = new PrependBuilder[A]
   private var i = 0
 
   def +=(element: A): Unit = {

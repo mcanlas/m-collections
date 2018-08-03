@@ -1,15 +1,9 @@
 package com.htmlism.collections
 package builders
 
-class ListBuilder[A] extends Builder[A, MList[A]] {
-  private var acc =
-    MList.empty[A]
-
-  def +=(element: A): Unit =
-    acc ::= element
-
+class ListBuilder[A] extends GenListBuilder[A] {
   def result: MList[A] = {
-    val builder = new ReverseListBuilder[A]
+    val builder = new PrependBuilder[A]
 
     for (e <- acc)
       builder += e
@@ -18,13 +12,15 @@ class ListBuilder[A] extends Builder[A, MList[A]] {
   }
 }
 
-class ReverseListBuilder[A] extends Builder[A, MList[A]] {
-  private var acc =
+class PrependBuilder[A] extends GenListBuilder[A] {
+  def result: MList[A] =
+    acc
+}
+
+abstract class GenListBuilder[A] extends Builder[A, MList[A]] {
+  protected var acc: MList[A] =
     MList.empty[A]
 
   def +=(element: A): Unit =
     acc ::= element
-
-  def result: MList[A] =
-    acc
 }
