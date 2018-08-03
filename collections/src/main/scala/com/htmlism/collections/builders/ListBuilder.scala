@@ -8,12 +8,12 @@ class ListBuilder[A] extends Builder[A, MList[A]] {
   def +=(element: A): Unit = acc ::= element
 
   def result: MList[A] = {
-    var rev = MList.empty[A]
+    var reversedAcc = MList.empty[A]
 
     for (x <- acc)
-      rev ::= x
+      reversedAcc ::= x
 
-    rev
+    reversedAcc
   }
 }
 
