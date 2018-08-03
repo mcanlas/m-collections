@@ -5,22 +5,26 @@ class ListBuilder[A] extends Builder[A, MList[A]] {
   private var acc =
     MList.empty[A]
 
-  def +=(element: A): Unit = acc ::= element
+  def +=(element: A): Unit =
+    acc ::= element
 
   def result: MList[A] = {
-    var reversedAcc = MList.empty[A]
+    val builder = new ReverseListBuilder[A]
 
-    for (x <- acc)
-      reversedAcc ::= x
+    for (e <- acc)
+      builder += e
 
-    reversedAcc
+    builder.result
   }
 }
 
 class ReverseListBuilder[A] extends Builder[A, MList[A]] {
-  private var acc: MList[A] = MNil
+  private var acc =
+    MList.empty[A]
 
-  def +=(element: A): Unit = acc ::= element
+  def +=(element: A): Unit =
+    acc ::= element
 
-  def result: MList[A] = acc
+  def result: MList[A] =
+    acc
 }
