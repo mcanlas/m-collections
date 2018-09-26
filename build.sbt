@@ -9,3 +9,5 @@ lazy val root = (project in file("."))
 lazy val collections = project
   .settings(commonSettings: _*)
   .settings(libraryDependencies += "org.specs2" %% "specs2-core" % "4.3.4" % "test")
+
+scalafmtOnCompile := true
