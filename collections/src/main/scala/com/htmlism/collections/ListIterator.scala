@@ -12,8 +12,7 @@ class ListIterator[A](list: MList[A]) extends Iterator[A] {
   def next(): A =
     cur match {
       case MNil =>
-        throw new IllegalStateException(
-          "cannot retrieve an element from an exhausted iterator")
+        throw new IllegalStateException("cannot retrieve an element from an exhausted iterator")
 
       case NonEmptyList(head, tail) =>
         cur = tail
