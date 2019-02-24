@@ -9,4 +9,4 @@ lazy val root = (project in file("."))
 lazy val collections = project
   .settings(commonSettings: _*)
   .settings(
-    libraryDependencies += "org.specs2" %% "specs2-core" % "4.3.6" % "test")
+    libraryDependencies += "org.specs2" %% "specs2-core" % "4.4.1" % "test")
