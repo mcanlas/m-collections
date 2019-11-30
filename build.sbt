@@ -1,6 +1,5 @@
-lazy val commonSettings = Seq(scalafmtOnCompile := true,
-                              scalaVersion := "2.12.10",
-                              crossScalaVersions := Seq("2.11.12", "2.12.10"))
+lazy val commonSettings =
+  Seq(scalafmtOnCompile := true, scalaVersion := "2.12.10", crossScalaVersions := Seq("2.11.12", "2.12.10"))
 
 lazy val root = (project in file("."))
   .settings(commonSettings: _*)
@@ -8,5 +7,4 @@ lazy val root = (project in file("."))
 
 lazy val collections = project
   .settings(commonSettings: _*)
-  .settings(
-    libraryDependencies += "org.specs2" %% "specs2-core" % "4.6.0" % "test")
+  .settings(libraryDependencies += "org.specs2" %% "specs2-core" % "4.6.0" % "test")
