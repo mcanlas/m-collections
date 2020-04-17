@@ -7,7 +7,8 @@ class ListSpec extends SeqSpec {
     "do nothing after traversal" in {
       var i = 0
 
-      MNil.foreach(_ => i += 1)
+      // type annotation evades dead code warning from Nothing type
+      (MNil: MList[Int]).foreach(_ => i += 1)
 
       i === 0
     }
