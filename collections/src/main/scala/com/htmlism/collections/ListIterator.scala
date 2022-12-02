@@ -6,7 +6,7 @@ class ListIterator[A](list: MList[A]) extends Iterator[A] {
   def hasNext: Boolean =
     cur match {
       case MNil => false
-      case _ => true
+      case _    => true
     }
 
   def next(): A =
