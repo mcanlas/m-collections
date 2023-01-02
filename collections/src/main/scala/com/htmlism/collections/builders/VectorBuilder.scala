@@ -17,7 +17,7 @@ class VectorBuilder[A] extends Builder[A, MVector[A]] {
 
     for (x <- b.result) {
       arr(i) = x.asInstanceOf[AnyRef]
-      i = i - 1
+      i      = i - 1
     }
 
     new MVector[A](arr)
