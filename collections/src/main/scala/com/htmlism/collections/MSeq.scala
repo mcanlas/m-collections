@@ -12,7 +12,8 @@ trait MSeq[+A] extends MIterable[A] {
     var n    = 0
 
     while (n < i && iter.hasNext) {
-      iter.next(): Unit
+      val _ = iter.next()
+
       n = n + 1
     }
 
