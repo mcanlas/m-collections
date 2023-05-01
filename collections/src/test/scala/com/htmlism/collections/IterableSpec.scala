@@ -8,5 +8,5 @@ trait IterableSpec extends TraversableSpec {
     "generate a non-empty iterator" in {
       iterable.iterator.hasNext === true
     }
-  }
+  }: Unit
 }

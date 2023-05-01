@@ -12,7 +12,7 @@ class ListSpec extends SeqSpec {
 
       i === 0
     }
-  }
+  }: Unit
 
   "A non-empty list" should {
     "have a head" in {
@@ -20,5 +20,5 @@ class ListSpec extends SeqSpec {
 
       list.head === "foo"
     }
-  }
+  }: Unit
 }

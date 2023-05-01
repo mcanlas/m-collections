@@ -13,5 +13,5 @@ trait TraversableSpec extends Specification {
 
       i === 4
     }
-  }
+  }: Unit
 }
