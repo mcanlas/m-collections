@@ -16,9 +16,9 @@ class ListSpec extends SeqSpec {
 
   "A non-empty list" should {
     "have a head" in {
-      val list = NonEmptyList('foo, MNil)
+      val list = NonEmptyList("foo", MNil)
 
-      list.head === 'foo
+      list.head === "foo"
     }
   }
 }
