@@ -1,7 +1,7 @@
 lazy val commonSettings =
   Seq(
     scalaVersion       := "2.13.10",
-    crossScalaVersions := Seq("2.12.17", "2.13.10")
+    crossScalaVersions := Seq("2.12.18", "2.13.10")
   )
 
 lazy val root = (project in file("."))
