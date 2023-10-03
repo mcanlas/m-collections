@@ -1,6 +1,6 @@
 package com.htmlism.collections
 
-import com.htmlism.collections.builders._
+import com.htmlism.collections.builders.*
 
 object MIterable extends CollectionFactory[MIterable] {
   def builder[A]: Builder[A, MIterable[A]] = new ListBuilder[A]

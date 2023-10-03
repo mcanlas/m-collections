@@ -1,6 +1,6 @@
 package com.htmlism.collections
 
-import weaver._
+import weaver.*
 
 object ListSuite extends FunSuite with SeqSuite with IterableSuite with TraversableSuite {
   private val xs =

@@ -1,6 +1,6 @@
 package com.htmlism.collections
 
-import com.htmlism.collections.builders._
+import com.htmlism.collections.builders.*
 
 object MVector extends CollectionFactory[MVector] {
   def builder[A]: Builder[A, MVector[A]] = new VectorBuilder[A]
