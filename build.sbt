@@ -11,4 +11,4 @@ lazy val root = (project in file("."))
 lazy val collections = project
   .settings(commonSettings*)
   .settings(testFrameworks += new TestFramework("weaver.framework.CatsEffect"))
-  .settings(libraryDependencies += "com.disneystreaming" %% "weaver-cats" % "0.8.3" % Test)
+  .settings(libraryDependencies += "com.disneystreaming" %% "weaver-cats" % "0.8.4" % Test)
