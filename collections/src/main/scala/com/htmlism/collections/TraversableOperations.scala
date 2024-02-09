@@ -6,7 +6,7 @@ package com.htmlism.collections
   * @tparam A
   *   The element type
   */
-trait TraversableOperations[+A] {
+trait TraversableOperations[+A]:
   self: MTraversable[A] =>
 
   /**
@@ -21,32 +21,27 @@ trait TraversableOperations[+A] {
     * @return
     *   The accumulated value
     */
-  def foldLeft[B](z: B)(f: (B, A) => B): B = {
+  def foldLeft[B](z: B)(f: (B, A) => B): B =
     var res = z
 
-    for (x <- this)
-      res = f(res, x)
+    for x <- this do res = f(res, x)
 
     res
-  }
 
-  override def toString = {
+  override def toString =
     val sb = new StringBuilder(self.getClass.getSimpleName + '(')
 
     var first = true
 
-    for (x <- self)
-      if (first) {
+    for x <- self do
+      if first then
         sb ++= x.toString
 
         first = false
-      } else {
+      else
         sb ++= ", "
         sb ++= x.toString
-      }
 
     sb += ')'
 
     sb.result()
-  }
-}
