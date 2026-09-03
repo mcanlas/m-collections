@@ -2,6 +2,7 @@ package com.htmlism.collections
 
 import weaver.*
 
+@SuppressWarnings(Array("org.wartremover.warts.Var"))
 object ListSuite extends FunSuite with SeqSuite with IterableSuite with TraversableSuite:
   private val xs =
     1 :: 2 :: 3 :: 4 :: MNil

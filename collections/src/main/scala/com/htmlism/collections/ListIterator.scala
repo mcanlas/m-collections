@@ -1,6 +1,7 @@
 package com.htmlism.collections
 
 class ListIterator[A](list: MList[A]) extends Iterator[A]:
+  @SuppressWarnings(Array("org.wartremover.warts.Var"))
   private var cur = list
 
   def hasNext: Boolean =
@@ -8,6 +9,7 @@ class ListIterator[A](list: MList[A]) extends Iterator[A]:
       case MNil => false
       case _    => true
 
+  @SuppressWarnings(Array("org.wartremover.warts.Throw"))
   def next(): A =
     cur match
       case MNil =>

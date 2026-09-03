@@ -14,6 +14,7 @@ class PrependBuilder[A] extends GenListBuilder[A]:
     acc
 
 abstract class GenListBuilder[A] extends Builder[A, MList[A]]:
+  @SuppressWarnings(Array("org.wartremover.warts.Var"))
   protected var acc: MList[A] =
     MList.empty[A]
 

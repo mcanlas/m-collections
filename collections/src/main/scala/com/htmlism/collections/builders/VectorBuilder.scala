@@ -3,12 +3,15 @@ package builders
 
 class VectorBuilder[A] extends Builder[A, MVector[A]]:
   private val b = new PrependBuilder[A]
+
+  @SuppressWarnings(Array("org.wartremover.warts.Var"))
   private var i = 0
 
   def +=(element: A): Unit =
     b += element
     i += 1
 
+  @SuppressWarnings(Array("org.wartremover.warts.AsInstanceOf"))
   def result: MVector[A] =
     // generically typed arrays are hard?
     val arr = new Array[AnyRef](i)

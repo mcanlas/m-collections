@@ -21,6 +21,7 @@ trait TraversableOperations[+A]:
     * @return
     *   The accumulated value
     */
+  @SuppressWarnings(Array("org.wartremover.warts.Var"))
   def foldLeft[B](z: B)(f: (B, A) => B): B =
     var res = z
 
@@ -28,6 +29,7 @@ trait TraversableOperations[+A]:
 
     res
 
+  @SuppressWarnings(Array("org.wartremover.warts.Var", "org.wartremover.warts.StringPlusAny"))
   override def toString =
     val sb = new StringBuilder(self.getClass.getSimpleName + '(')
 

@@ -6,6 +6,7 @@ object MSeq extends CollectionFactory[MSeq]:
   def builder[A]: ListBuilder[A] = new ListBuilder[A]
 
 trait MSeq[+A] extends MIterable[A]:
+  @SuppressWarnings(Array("org.wartremover.warts.Var", "org.wartremover.warts.Throw"))
   def apply(i: Int): A =
     val iter = iterator
     var n    = 0

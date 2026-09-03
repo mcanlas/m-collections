@@ -6,6 +6,7 @@ object MVector extends CollectionFactory[MVector]:
   def builder[A]: Builder[A, MVector[A]] = new VectorBuilder[A]
 
 class MVector[A](values: Array[AnyRef]) extends MIndexedSeq[A]:
+  @SuppressWarnings(Array("org.wartremover.warts.Var", "org.wartremover.warts.AsInstanceOf"))
   def iterator =
     new Iterator[A]: // TODO use custom iterator trait
       var i = 0
